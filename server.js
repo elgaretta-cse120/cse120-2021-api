@@ -1,4 +1,3 @@
-
 var requiredFields = [
   "fullname", "age"
 ]
@@ -172,7 +171,23 @@ function showTheHobbyData(e){
 function updateBook(){
   var tmp = {
    "id" : document.getElementById("_id").value,
-   "title" : document.getElementById("title").value
+   "fullname" : document.getElementById("fullname").value,
+   "title": document.getElementById("title").value,
+   "author": document.getElementById("author").value,
+   "covertype": document.getElementById("covertype").value,
+   "npages": document.getElementById("npages").value,
+   "price": document.getElementById("price").value,
+   "currency": document.getElementById("currency").value,
+   "language": document.getElementById("language").value,
+   "olanguage": document.getElementById("olanguage").value,
+   "edition": document.getElementById("edition").value,
+   "dimensions": document.getElementById("dimensions").value,
+   "publisher": document.getElementById("publisher").value,
+   "PDate": document.getElementById("PDate").value,
+   "ODate": document.getElementById("ODate").value,
+   "restriction": document.getElementById("restriction").value,
+   "age": document.getElementById("age").value,
+   "genre": document.getElementById("genre").value,
    }
   
   $.ajax({
@@ -192,6 +207,56 @@ function updateBook(){
       }
     });
   }
+
+function updateHobby(){
+  var tmp = {
+   "id" : document.getElementById("_id").value,
+   "fullname" : document.getElementById("fullname").value,
+   "age" : document.getElementById("age").value,
+   "gender" : document.getElementById("gender").value,
+   "question3" : document.getElementById("question3").value,
+   "question4" : document.getElementById("question4").value,
+   "profession" : document.getElementById("question5").value,
+   "time" : document.getElementById("question6").value,
+   "purchasePaintbrushes" : document.getElementById("question7").value,
+   "question8" : document.getElementById("question8").value,
+   "enjoypainting" : document.getElementById("question9").value,
+   "question10" : document.getElementById("question10").value,
+   "paintbrushesCleaning" : document.getElementById("question11").value
+   
+   
+   }
+  
+  $.ajax({
+      type: 'POST',
+      url: "https://cse120-2021-api-elgaretta.herokuapp.com/data/update",
+      data: myhobby,
+      cache: false,
+      dataType : 'json',
+      success: function (data) {
+        console.log("success");
+      },
+      error: function (xhr) {
+        console.error("Error in post", xhr);
+      },
+      complete: function () {
+        console.log("Complete");  
+      }
+    });
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -275,9 +340,9 @@ function loadEditItem() {
     editItem = JSON.parse(localStorage.getItem("editItem"));
     console.log(editItem);
     document.getElementById("_id").innerHTML = editItem["_id"];
-    document.getElementById("title").value = editItem["title"];
-    document.getElementById("fullname").value = editItem["fullname"];   
-    document.getElementById("author").value = editItem["author"];   
+    document.getElementById("fullname").value = editItem["fullname"];
+    document.getElementById("title").value = editItem["title"];   
+    document.getElementById("author").value = editItem["author"]; 
     document.getElementById("covertype").value = editItem["covertype"];
     document.getElementById("npages").value = editItem["npages"];
     document.getElementById("price").value = editItem["price"];
@@ -303,8 +368,15 @@ function loadHobbyEditItem() {
     document.getElementById("fullname").value = editItem["fullname"];
     document.getElementById("age").value = editItem["age"];   
     document.getElementById("gender").value = editItem["gender"];   
-    document.getElementById("artactivity").value = editItem["artactivity"];
-    document.getElementById("talentedyourself").value = editItem["talentedyourself"];
+    document.getElementById("question3").value = editItem["question3"];
+    document.getElementById("question4").value = editItem["question4"];
+    document.getElementById("question5").value = editItem["question5"];
+    document.getElementById("question6").value = editItem["question6"];
+    document.getElementById("question7").value = editItem["question7"];
+    document.getElementById("question8").value = editItem["question8"];
+    document.getElementById("question9").value = editItem["question9"];
+    document.getElementById("question10").value = editItem["question10"];
+    document.getElementById("question11").value = editItem["question11"];
     
 }
 
@@ -482,6 +554,9 @@ function toggleOtherData() {
     otherData.style.display = "block";
   }
 }
+
+
+
 
 
 
