@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire for Painters</title>
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Sofia|Trirong&effect=shadow-multiple|outline">
+    <script
+			src="https://code.jquery.com/jquery-3.5.1.min.js"
+			integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+			crossorigin="anonymous"></script>
+
+  
+  </head>
+
+<body> 
+   <form name="paintingasmyhobby"  >
+    <div>
+    <div class="Mydiv1" >
+     <div id="blue_rows">
+      <h2 class="font-effect-shadow-multiple">Questionnaire for Painters</h2>
+      <h1 class="font-effect-outline">Hi there, if your hobby is painting, then this survey is for you.</h1>
+        <span>* Required</span>
+    </div>
+
+    <div class="Mydiv blue_rows">
+      <strong><label for="fname" class="caption" id="fname" style= "display: block;
+      margin-bottom: 10px;">Full name:<span style="color: orange;font-weight:">*</span></label></strong><br>
+      <input type="text" id="fullname" class="art" required  name="fname" onblur="handleFullnameChange()" ><br>
+    </div>
+   
+
+        
+    <div class="Mydiv blue_rows">
+      <card></card>
+      <strong><label for="Q1" class="caption" id="question1 " style="display: block; margin-bottom: 10px;">Age:<span font-weight:">*</span></label></strong><br>
+       <input type="number" id="age" class="art" name="age"min="1"max="75" required onchange="handleAgeChange()"><br>
+     </div>
+    
+    <div class="Mydiv blue_rows">
+    
+      <strong> <label for="Q2" id="question2" class="caption" style="display: block;">Gender:</label></strong><br></label></strong><br>
+      <select name="gender" id="gender" class="art" onchange="handleGenderChange()">
+        <option value="select" id="select">Select</option>
+        <option value="Male" id="Male">Male</option>
+        <option value="Female" id="Female" ">Female</option></select>
+      
+     </div>
+     
+  <div class="Mydiv blue_rows">
+    <strong><label for="Q3" id="question3" class="caption" style="display: block;
+    margin-bottom: 10px;">Have you ever painted as an artistic activity, as opposed to painting a house?:</label></strong><br>
+    <select name="Q3" id="artistic" class="art" onchange="handleQuestion3Change()">
+    <option value="select" id="select">Select</option>
+    <option value="Yes">Yes</option>
+    <option value="No">No</option></select><br>
+     </div>
+  
+  <div class="Mydiv blue_rows">
+    <strong><label for="Q4"id="question4" class="caption" style="display: block;
+    margin-bottom: 10px;">Do you consider yourself to be talented in drawing or painting?:</label></strong><br>
+    <select name="Q2" id="talentedyourself" class="art" onchange="handleQuestion4Change()">
+    <option value="select" id="select">Select</option>
+    <option value="Yes">Yes</option>
+    <option value="No">No</option></select><br>
+    </div>
+    
+    <div class="Mydiv3 bulletpoints"> 
+      <strong><label for="Q5" id="question5" class="caption" style="display: block;
+      margin-bottom: 10px;">Are you a ______</label></strong><br>
+      <input type="radio" id="Hobbyist" name="option" value="Hobbyist" onchange="handleProfessionChange(event)"
+      <label for="Hobbyist">Hobbyist</label><br>
+      <input type="radio" id="Proartist" name="option" value="Proartist" onchange="handleProfessionChange(event)">
+      <label for="Artteacher">Professional artist</label><br>
+      <input type="radio" id="Artteacher" name="option" value="Artteacher" onchange="handleProfessionChange(event)">
+      <label for="teacher">Art teacher</label><br>
+      <input type="radio" id="student" name="option" value="student" onchange="handleProfessionChange(event)">
+      <label for="student">Art student</label><br>
+      <input type="radio" id="otherP" name="option" value="otherP" onchange="handleProfessionChange(event)">
+      <label for="other">Other (please specify):</label>
+      <label for="radio"></label>
+      <textarea name="other" id="otherProfession" cols="50" rows="5" onblur="handleCustomProfessionChange()"></textarea>
+    
+    </div>
+  
+    <div class="Mydiv blue_rows"> 
+        <strong><label for="Q6" id="question6" class="caption" style="display: block;
+        margin-bottom: 10px;">What time in a day do you like to start painting?</label></strong><br>
+        <input type="time" id="timeoftheday"  class="art" name="time" onchange="handleTimeChange(event)"><br>
+    </div>
+
+
+    <div class="Mydiv blue_rows">
+      <strong><label for="Q7"id="question7" class="caption" style="display: block;
+      margin-bottom: 10px;">How often do you purchase/replace paintbrushes?:</label></strong><br>
+      <input type="radio" id="Weekly" name="paintbrushes" value="Weekly" onchange="handlePurchaseReplaceChange(event)">
+      <label for="Weekly">Weekly</label><br>
+      <input type="radio" id="Months" name="paintbrushes" value="Months" onchange="handlePurchaseReplaceChange(event)">
+      <label for="Months">3-6 Months</label><br>
+      <input type="radio" id="1-3 Months" name="paintbrushes" value="1-3 Months" onchange="handlePurchaseReplaceChange(event)">
+      <label for="1-3 Months">1-3 Months</label><br>
+      <input type="radio" id="fewweeks" name="paintbrushes" value="fewweeks" onchange="handlePurchaseReplaceChange(event)">
+      <label for="fewweeks">Every few weeks:</label><br>
+      <input type="radio" id="otheroption" name="paintbrushes" value="other" onchange="handlePurchaseReplaceChange(event)">
+      <label for="other">Other (please specify):</label>
+      <label for="radio"></label><br>
+      <textarea name="other" id="othertool" cols="50" rows="5" 
+      onblur="handleCustomPurchaseReplaceChange()"></textarea><br>
+
+    </div>
+    
+  
+    <div class="Mydiv blue_rows">
+      <strong><label for="Q8"id="question8" class="caption" style="display: block;
+      margin-bottom: 10px;">How long does your paintbrushes last?</label></strong><br>
+      <select name="Q6" id="paintbrushlast" class="art" onchange="handleQuestion8Change()">
+      <option value="select" id="select">Select</option>
+      <option value="1 Month or less">1 Month or less</option>
+      <option value="1-3 Months">1-3 Months</option>
+      <option value="3-6 Months">3-6 Months</option>
+      <option value="6-12 Months">6-12 Months</option>
+      <option value="1 Year or above">1 Year or above</option>
+      </select><br>
+     </div>
+
+
+  <div class="Mydiv blue_rows">
+    <strong><label for="Q9" id="question9" class="caption" style="display: block;
+    margin-bottom: 10px;">Which of the tools you enjoy painting/drawing with the most?<br>
+    (you can choose 1 or more options</label></strong><br>
+    <input type="checkbox" name="enjoypainting" id="watercolor" value="watercolor" onclick="handleCheckboxChange(event)">Watercolor<br>
+    <input type="checkbox" name="enjoypainting" id="colorpenciles" value="colorpenciles" onclick="handleCheckboxChange(event)">Colored penciles<br>
+    <input type="checkbox" name="enjoypainting" id="oil" value="oil"  onclick="handleCheckboxChange(event)">Oil paints<br>
+    <input type="checkbox" name="enjoypainting"  id="acrylic" value="acrylic"  onclick="handleCheckboxChange(event)"> Acrylic paint<br> 
+    <input type="checkbox" name="enjoypainting"  id="markers" value="markers" onclick="handleCheckboxChange(event)"> Colored markers<br>
+    <input type="checkbox" name="enjoypainting" id="pens" value="pens" onclick="handleCheckboxChange(event)">Gel pens<br>
+    <input type="checkbox" name="enjoypainting" id="blackmarker" value="blackmarker"  onclick="handleCheckboxChange(event)" >Only black marker/gel pen<br>
+    <input type="checkbox" name="enjoypainting" id="penciles" value="penciles"  onclick="handleCheckboxChange(event)" >Only black paint<br>
+
+         
+    </label><br>
+    </input><br>
+     </div>
+
+  <div class="Mydiv blue_rows">
+    <strong><label for="Q10" id="question10" class="caption" style="display: block;
+    margin-bottom: 10px;">Do you purchase solvents to clean your paintbrushes?</label></strong><br>
+    <select name="Q7" id="clean" class="art" onchange="handleQuestion10Change()">
+    <option value="select" id="select">Select</option>
+    <option value="Yes">Yes</option>
+    <option value="No">No</option></select><br>
+     </div>
+
+  <div class="Mydiv blue_rows">
+    <strong><label for="Q11"id="question11" class="caption" style="display: block;
+    margin-bottom: 10px;">Lastly, do you clean your paintbrush after every use?:</label></strong><br>
+    <input type="radio" id="solvent/water" name="paintbrush" value="solvent/water" onchange="handlePaintbrushCleaningChange(event)">
+    <label for="Weekly">Yes, thoroughly with solvent/water.</label><br>
+    <input type="radio" id="briefly" name="paintbrush" value="briefly" onchange="handlePaintbrushCleaningChange(event)">
+    <label for="briefly">Yes, but just briefly.</label><br>
+    <input type="radio" id="troublesome" name="paintbrush" value="troublesome" onchange="handlePaintbrushCleaningChange(event)">
+    <label for="troublesome">No, it is troublesome.</label><br>
+    <input type="radio" id="laterUse" name="paintbrush" value="laterUse" onchange="handlePaintbrushCleaningChange(event)">
+    <label for="later use">No, I wish to keep the colour for later use.</label><br>
+    <input type="radio" id="otheranswer" name="paintbrush" value="otheranswer" onchange="handlePaintbrushCleaningChange(event)">
+    <label for="other">Other (please specify):</label>
+    <textarea name="other" id="othertext" cols="50" rows="5" onblur="handleCustomPaintbrushCleaningChange()"></textarea><br>
+
+    </div><br><br><br>
+
+    <img src="https://i.pinimg.com/736x/44/5b/16/445b16a9d2230d06e95deb735ffa3f7c.jpg" alt="girl-painting">
+
+    
+    
+    
+    
+    <h1 class="font-effect-shadow-multiple">You reached to the end of the survey. Thank you for your time and effort.</h1>
+
+
+   
+
+  <button class="button button4" style="" onclick="showTheHobbyData(event)">Submit</button>
+  
+
+
+</form>
+<script src="script.js" ></script>
+</body>
+</html>
