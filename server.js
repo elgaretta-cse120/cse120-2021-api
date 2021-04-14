@@ -278,7 +278,6 @@ function loadEditItem() {
     document.getElementById("title").value = editItem["title"];
     document.getElementById("fullname").value = editItem["fullname"];   
     document.getElementById("author").value = editItem["author"];   
-    document.getElementById("pages").value = editItem["noOfPgs"];
     document.getElementById("covertype").value = editItem["covertype"];
     document.getElementById("npages").value = editItem["npages"];
     document.getElementById("price").value = editItem["price"];
