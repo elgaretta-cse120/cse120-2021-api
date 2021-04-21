@@ -176,18 +176,18 @@ function updateBook(){
    "fullname" : document.getElementById("fullname").value,
    "title": document.getElementById("title").value,
    "author": document.getElementById("author").value,
-   "covertype": document.getElementById("covertype").value,
+   "covertype": document.getElementById("coverMaterial").value,
    "npages": document.getElementById("npages").value,
    "price": document.getElementById("price").value,
    "currency": document.getElementById("currency").value,
-   "language": document.getElementById("language").value,
-   "olanguage": document.getElementById("olanguage").value,
+   "language": document.getElementById("bookLanguage").value,
+   "olanguage": document.getElementById("bookOLanguage").value,
    "edition": document.getElementById("edition").value,
    "dimensions": document.getElementById("dimensions").value,
    "publisher": document.getElementById("publisher").value,
-   "PDate": document.getElementById("PDate").value,
-   "ODate": document.getElementById("ODate").value,
-   "restriction": document.getElementById("restriction").value,
+   "PDate": document.getElementById("publishingdate").value,
+   "ODate": document.getElementById("originalpublishingdate").value,
+   "restriction": document.getElementById("agerestriction").value,
    "age": document.getElementById("age").value,
    "genre": document.getElementById("genre").value,
    }
@@ -345,18 +345,18 @@ function loadEditItem() {
     document.getElementById("fullname").value = editItem["fullname"];
     document.getElementById("title").value = editItem["title"];   
     document.getElementById("author").value = editItem["author"]; 
-    document.getElementById("covertype").value = editItem["covertype"];
+    document.getElementById("covertype").value = editItem["coverMaterial"];
     document.getElementById("npages").value = editItem["npages"];
     document.getElementById("price").value = editItem["price"];
     document.getElementById("currency").value = editItem["currency"];
-    document.getElementById("language").value = editItem["language"];
-    document.getElementById("olanguage").value = editItem["olanguage"];
+    document.getElementById("language").value = editItem["bookLanguage"];
+    document.getElementById("olanguage").value = editItem["bookOLanguage"];
     document.getElementById("edition").value = editItem["edition"];
     document.getElementById("dimensions").value = editItem["dimensions"];
     document.getElementById("publisher").value = editItem["publisher"];
-    document.getElementById("PDate").value = editItem["PDate"];
-    document.getElementById("ODate").value = editItem["ODate"];
-    document.getElementById("restriction").value = editItem["restriction"];
+    document.getElementById("PDate").value = editItem["publishingdate"];
+    document.getElementById("ODate").value = editItem["originalpublishingdate"];
+    document.getElementById("restriction").value = editItem["agerestriction"];
     document.getElementById("age").value = editItem["age"];
     document.getElementById("genre").value = editItem["genre"];
     
@@ -372,13 +372,13 @@ function loadHobbyEditItem() {
     document.getElementById("gender").value = editItem["gender"];   
     document.getElementById("question3").value = editItem["question3"];
     document.getElementById("question4").value = editItem["question4"];
-    document.getElementById("question5").value = editItem["question5"];
-    document.getElementById("question6").value = editItem["question6"];
-    document.getElementById("question7").value = editItem["question7"];
+    document.getElementById("question5").value = editItem["profession"];
+    document.getElementById("question6").value = editItem["time"];
+    document.getElementById("question7").value = editItem["purchasePaintbrushes"];
     document.getElementById("question8").value = editItem["question8"];
-    document.getElementById("question9").value = editItem["question9"];
+    document.getElementById("question9").value = editItem["enjoypainting"];
     document.getElementById("question10").value = editItem["question10"];
-    document.getElementById("question11").value = editItem["question11"];
+    document.getElementById("question11").value = editItem["paintbrushesCleaning"];
     
 }
 
