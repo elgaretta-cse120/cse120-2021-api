@@ -3,6 +3,238 @@ var requiredFields = [
 ]
 
 
+
+var myfavebook = {
+  "owner": "Elgaretta Beglaryan",
+  "project": "Book",
+  "fullname": "",
+  "title": "",
+  "author":"",
+  "colour": "",
+  "coverMaterial": "",
+  "otherMaterialValue": "",
+  "npages": "",
+  "price": "",
+  "currency": "",
+  "bookLanguage": "",
+  "otherLanguageValue": "",
+  "bookOLanguage": "",
+  "otherOLanguageValue": "",
+  "edition": "",
+  "dimensions": "",
+  "publisher": "",
+  "publishingdate": "",
+  "originalpublishingdate": "",
+  "genre": "",
+  "agerestriction": "",
+  "age": "",
+  "time": "",
+ 
+}
+
+function handleFullnameChange() {
+  myfavebook.fullname = document.getElementById
+  ("fullname").value;
+}
+
+function handleTitleChange() {
+  myfavebook.title= document.getElementById
+  ("title").value;
+}
+
+function handleAuthorChange() {
+  myfavebook.author= document.getElementById
+  ("author").value;
+}
+
+function handleColourChange() {
+  myfavebook.colour= document.getElementById
+  ("colour").value;
+}
+
+function handleMaterialChange(e) {
+  myfavebook.coverMaterial = e.target.value;
+  if (myfavebook.coverMaterial != "other") {
+    myfavebook.otherMaterialValue = "";
+    document.getElementById("otherMaterial").style.display = "none";
+  } else {
+    document.getElementById("otherMaterial").style.display = "block";
+  }
+}
+
+function handleCustomMaterialChange() {
+  if (myfavebook.coverMaterial == "other") {
+    myfavebook.otherMaterialValue = document.getElementById("otherMaterial").value;
+  }
+
+  console.log(myfavebook);
+}
+
+function handleNpagesChange() {
+  myfavebook.npages= document.getElementById
+  ("npages").value;
+}
+
+
+function handlePriceChange() {
+  myfavebook.price= document.getElementById
+  ("price").value;
+}
+
+
+function handleCurrencyChange() {
+  myfavebook.currency= document.getElementById
+  ("currency").value;
+}
+
+function handleLanguageChange(e) {
+  myfavebook.bookLanguage = e.target.value;
+  if (myfavebook.bookLanguage != "otherL") {
+    myfavebook.otherLanguageValue = "";
+    document.getElementById("otherLanguage").style.display = "none";
+  } else {
+    document.getElementById("otherLanguage").style.display = "block";
+  }
+}
+
+function handleCustomLanguageChange() {
+  if (myfavebook.bookLanguage == "otherL") {
+    myfavebook.otherLanguageValue = document.getElementById("otherLanguage").value;
+  }
+
+  console.log(myfavebook);
+}
+
+
+
+function handleOLanguageChange(e) {
+  myfavebook.bookOLanguage = e.target.value;
+  if (myfavebook.bookOLanguage != "OtherOL") {
+    myfavebook.otherOLanguageValue = "";
+    document.getElementById("otherOLanguage").style.display = "none";
+  } else {
+    document.getElementById("otherOLanguage").style.display = "block";
+  }
+}
+
+function handleCustomOLanguageChange() {
+  if (myfavebook.bookOLanguage == "OtherOL") {
+    myfavebook.otherOLanguageValue = document.getElementById("otherOLanguage").value;
+  }
+
+  console.log(myfavebook);
+}
+
+function handleEditionChange() {
+  myfavebook.edition= document.getElementById
+  ("edition").value;
+
+}
+
+
+function handleDimensionsChange() {
+  myfavebook.dimensions= document.getElementById
+  ("dimensions").value;
+}
+
+function handlePublisherChange() {
+  myfavebook.publisher= document.getElementById
+  ("publisher").value;
+}
+
+function handlePublishingDateChange() {
+  myfavebook.publishingdate= document.getElementById
+  ("PDate").value;
+}
+
+function handleOPublishingDateChange() {
+  myfavebook.originalpublishingdate= document.getElementById
+  ("ODate").value;
+}
+
+
+
+
+function handleGenreChange() {
+  myfavebook.genre= document.getElementById
+  ("genre").value;
+}
+
+function handleAgeRestrictionChange() {
+  myfavebook.agerestriction= document.getElementById
+  ("restriction").value;
+}
+
+
+
+
+
+
+function handleAgeChange(){ 
+  myfavebook.age= document.getElementById("age").value
+
+}
+function handleTimeChange(e){ 
+  myfavebook.time= document.getElementById("timeoftheday").value
+
+}
+
+function showTheBookData(e){
+  e.preventDefault();
+  console.log(myfavebook);
+  $.ajax({
+    type: 'POST',
+    url: "https://cse120-2021-api-elgaretta.herokuapp.com/data",
+    data: tmp,
+    cache: false,
+    dataType : 'json',
+    success: function (data) {
+      console.log("success");
+    },
+    error: function (xhr) {
+      console.error("Error in post", xhr);
+    },
+    complete: function () {
+      console.log("Complete");  
+    }
+  });
+}
+
+function updateBook(){
+  var tmp = {
+   "id" : document.getElementById("_id").value,
+   "fullname" : document.getElementById("fullname").value,
+   "title": document.getElementById("title").value,
+   "author": document.getElementById("author").value,
+   "covertype": document.getElementById("coverMaterial").value,
+   "npages": document.getElementById("npages").value,
+   "price": document.getElementById("price").value,
+   "currency": document.getElementById("currency").value,
+   "language": document.getElementById("bookLanguage").value,
+   "olanguage": document.getElementById("bookOLanguage").value,
+   "edition": document.getElementById("edition").value,
+   "dimensions": document.getElementById("dimensions").value,
+   "publisher": document.getElementById("publisher").value,
+   "PDate": document.getElementById("publishingdate").value,
+   "ODate": document.getElementById("originalpublishingdate").value,
+   "restriction": document.getElementById("agerestriction").value,
+   "age": document.getElementById("age").value,
+   "genre": document.getElementById("genre").value,
+   }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 var myhobby = {
   "project" : "Painting",
   "owner": "Elgaretta Beglaryan",
@@ -168,27 +400,7 @@ function showTheHobbyData(e){
   }
 }
 
-function updateBook(){
-  var tmp = {
-   "id" : document.getElementById("_id").value,
-   "fullname" : document.getElementById("fullname").value,
-   "title": document.getElementById("title").value,
-   "author": document.getElementById("author").value,
-   "covertype": document.getElementById("coverMaterial").value,
-   "npages": document.getElementById("npages").value,
-   "price": document.getElementById("price").value,
-   "currency": document.getElementById("currency").value,
-   "language": document.getElementById("bookLanguage").value,
-   "olanguage": document.getElementById("bookOLanguage").value,
-   "edition": document.getElementById("edition").value,
-   "dimensions": document.getElementById("dimensions").value,
-   "publisher": document.getElementById("publisher").value,
-   "PDate": document.getElementById("publishingdate").value,
-   "ODate": document.getElementById("originalpublishingdate").value,
-   "restriction": document.getElementById("agerestriction").value,
-   "age": document.getElementById("age").value,
-   "genre": document.getElementById("genre").value,
-   }
+
   
   $.ajax({
       type: 'POST',
