@@ -202,7 +202,7 @@ function showTheBookData(e){
 
 function updateBook(){
   var tmp = {
-   "id" : document.getElementById("_id").value,
+   "id" : document.getElementById("_id").innerHTML,
    "fullname" : document.getElementById("fullname").value,
    "title": document.getElementById("title").value,
    "author": document.getElementById("author").value,
