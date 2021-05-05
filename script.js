@@ -185,7 +185,7 @@ function showTheBookData(e){
   $.ajax({
     type: 'POST',
     url: "https://cse120-2021-api-elgaretta.herokuapp.com/data",
-    data: tmp,
+    data: myfavebook,
     cache: false,
     dataType : 'json',
     success: function (data) {
