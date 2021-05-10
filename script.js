@@ -222,6 +222,23 @@ function updateBook(){
    "genre": document.getElementById("genre").value,
    }
 
+$.ajax({
+      type: 'POST',
+      url: "https://cse120-2021-api-elgaretta.herokuapp.com/data/update",
+      data: tmp,
+      cache: false,
+      dataType : 'json',
+      success: function (data) {
+        console.log("success");
+      },
+      error: function (xhr) {
+        console.error("Error in post", xhr);
+      },
+      complete: function () {
+        console.log("Complete");  
+      }
+    });
+}
 
 
 
@@ -402,23 +419,8 @@ function showTheHobbyData(e){
 
 
   
-  $.ajax({
-      type: 'POST',
-      url: "https://cse120-2021-api-elgaretta.herokuapp.com/data/update",
-      data: myhobby,
-      cache: false,
-      dataType : 'json',
-      success: function (data) {
-        console.log("success");
-      },
-      error: function (xhr) {
-        console.error("Error in post", xhr);
-      },
-      complete: function () {
-        console.log("Complete");  
-      }
-    });
-  }
+  
+  
 
 function updateHobby(){
   var tmp = {
@@ -664,7 +666,34 @@ function saveData() {
             console.log("Complete");  
         }
     });
+
 }
+
+function saveBookData() {
+	var myfavebook = {
+		"test": "Data"
+	}
+
+    $.ajax({
+        type: 'POST',
+        url: "https://cse120-2021-api-elgaretta.herokuapp.com/data",
+        data: myfavebook,
+        cache: false,
+        dataType : 'json',
+        success: function (data) {
+        	console.log("success");
+        },
+        error: function (xhr) {
+            console.error("Error in post", xhr);
+        },
+        complete: function () {
+            console.log("Complete");  
+        }
+    });
+
+}
+
+
 
 function loadExistingData() {
   myPaintingData = [];
