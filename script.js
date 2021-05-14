@@ -222,7 +222,7 @@ $.ajax({
       dataType : 'json',
       success: function (data) {
         console.log("success");
-        location.href = "/admin";
+        location.href = "/admin.html";
       },
       error: function (xhr) {
         console.error("Error in post", xhr);
@@ -447,7 +447,7 @@ function updateHobby(){
       dataType : 'json',
       success: function (data) {
         console.log("success");
-        location.href = "/admin"
+        location.href = "/admin.html"
       },
       error: function (xhr) {
         console.error("Error in post", xhr);
