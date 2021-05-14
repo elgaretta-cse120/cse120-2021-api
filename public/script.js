@@ -605,9 +605,9 @@ function editData(id) {
             localStorage = window.localStorage;
             localStorage.setItem('editItem', JSON.stringify(item));
             if (item.project == "Painting") {
-              document.location  = "/edit_hobby";
+              document.location  = "/edit_hobby.html";
             } else {
-              document.location  = "/edit_book"; 
+              document.location  = "/edit_book.html"; 
             }
         }
     })
