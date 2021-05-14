@@ -182,7 +182,7 @@ function showTheBookData(e){
     dataType : 'json',
     success: function (data) {
       console.log("success");
-      location.href = "/book_thank_you"
+      location.href = "/book_thank_you.html"
     },
     error: function (xhr) {
       console.error("Error in post", xhr);
@@ -398,7 +398,7 @@ function showTheHobbyData(e){
       dataType : 'json',
       success: function (data) {
         console.log("success");
-        location.href = "/thank_you"
+        location.href = "/thank_you.html"
       },
 
 
