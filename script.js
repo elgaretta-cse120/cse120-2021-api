@@ -4,6 +4,7 @@ var requiredFields = [
 
 
 
+
 var myfavebook = {
   "owner": "Elgaretta Beglaryan",
   "project": "Book",
@@ -27,14 +28,15 @@ var myfavebook = {
   "originalpublishingdate": "",
   "genre": "",
   "agerestriction": "",
-  "age": "",
-  "time": "",
+  
+  
  
 }
 
-function handleFullnameChange() {
-  myfavebook.fullname = document.getElementById
-  ("fullname").value;
+function handleNameChange() {
+  var fullNameBox = document.getElementById("fullname")
+  myfavebook.fullname = fullNameBox.value;
+  fullNameBox.style.backgroundColor = "white";
 }
 
 function handleTitleChange() {
@@ -169,16 +171,6 @@ function handleAgeRestrictionChange() {
 
 
 
-
-function handleAgeChange(){ 
-  myfavebook.age= document.getElementById("age").value
-
-}
-function handleTimeChange(e){ 
-  myfavebook.time= document.getElementById("timeoftheday").value
-
-}
-
 function showTheBookData(e){
   e.preventDefault();
   console.log(myfavebook);
@@ -190,6 +182,7 @@ function showTheBookData(e){
     dataType : 'json',
     success: function (data) {
       console.log("success");
+      location.href = "/book_thank_you"
     },
     error: function (xhr) {
       console.error("Error in post", xhr);
@@ -218,7 +211,6 @@ function updateBook(){
    "PDate": document.getElementById("PDate").value,
    "ODate": document.getElementById("ODate").value,
    "restriction": document.getElementById("restriction").value,
-   "age": document.getElementById("age").value,
    "genre": document.getElementById("genre").value,
    }
 
@@ -230,6 +222,7 @@ $.ajax({
       dataType : 'json',
       success: function (data) {
         console.log("success");
+        location.href = "/admin";
       },
       error: function (xhr) {
         console.error("Error in post", xhr);
@@ -239,7 +232,6 @@ $.ajax({
       }
     });
 }
-
 
 
 
@@ -293,7 +285,7 @@ function handleGenderChange() {
 }
 
 function handleQuestion3Change() {
-  myhobby.question3 = document.getElementById("artactivity").value;
+  myhobby.question3 = document.getElementById("artistic").value;
 }
 
 function handleQuestion4Change() {
@@ -406,7 +398,10 @@ function showTheHobbyData(e){
       dataType : 'json',
       success: function (data) {
         console.log("success");
+        location.href = "/thank_you"
       },
+
+
       error: function (xhr) {
         console.error("Error in post", xhr);
       },
@@ -418,6 +413,9 @@ function showTheHobbyData(e){
 }
 
 
+
+
+ 
   
   
   
@@ -449,6 +447,7 @@ function updateHobby(){
       dataType : 'json',
       success: function (data) {
         console.log("success");
+        location.href = "/admin"
       },
       error: function (xhr) {
         console.error("Error in post", xhr);
@@ -475,7 +474,7 @@ function updateHobby(){
 
 
 function loadExistingData() {
-	var existingData = [];
+  var existingData = [];
   $.ajax({
     type : "GET",
     url : "https://cse120-2021-api-elgaretta.herokuapp.com/data",
@@ -569,7 +568,6 @@ function loadEditItem() {
     document.getElementById("PDate").value = editItem["publishingdate"];
     document.getElementById("ODate").value = editItem["originalpublishingdate"];
     document.getElementById("restriction").value = editItem["agerestriction"];
-    document.getElementById("age").value = editItem["age"];
     document.getElementById("genre").value = editItem["genre"];
     
 }
@@ -607,9 +605,9 @@ function editData(id) {
             localStorage = window.localStorage;
             localStorage.setItem('editItem', JSON.stringify(item));
             if (item.project == "Painting") {
-              document.location  = "hobby_form.html";
+              document.location  = "/edit_hobby";
             } else {
-              document.location  = "book_form.html"; 
+              document.location  = "/edit_book"; 
             }
         }
     })
@@ -646,9 +644,9 @@ function deleteData(id) {
 }
 
 function saveData() {
-	var tmp = {
-		"test": "Data"
-	}
+  var tmp = {
+    "test": "Data"
+  }
 
     $.ajax({
         type: 'POST',
@@ -657,7 +655,7 @@ function saveData() {
         cache: false,
         dataType : 'json',
         success: function (data) {
-        	console.log("success");
+          console.log("success");
         },
         error: function (xhr) {
             console.error("Error in post", xhr);
@@ -670,9 +668,9 @@ function saveData() {
 }
 
 function saveBookData() {
-	var myfavebook = {
-		"test": "Data"
-	}
+  var myfavebook = {
+    "test": "Data"
+  }
 
     $.ajax({
         type: 'POST',
@@ -681,7 +679,7 @@ function saveBookData() {
         cache: false,
         dataType : 'json',
         success: function (data) {
-        	console.log("success");
+          console.log("success");
         },
         error: function (xhr) {
             console.error("Error in post", xhr);
@@ -795,3 +793,5 @@ function toggleOtherData() {
     otherData.style.display = "block";
   }
 }
+
+
