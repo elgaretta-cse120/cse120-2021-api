@@ -1,0 +1,200 @@
+body{
+  font-family: Trirong;
+  text-shadow: 3px 3px 3px  rgba(27, 1, 94, 0.473);
+  background-image: url(https://wallpaperaccess.com/full/206340.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  width: 500px;
+  color: rgb(252, 223, 165);
+  
+
+  }
+
+body.admin {
+  width: 1000px;
+}
+
+img{
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+h1{
+  font-family:Trirong;
+  font-size:20pt;
+  color: rgb(218, 160, 35);
+  text-shadow: 3px 3px 3px  rgba(7, 12, 53, 0.87);
+  text-align: center;
+  
+   }
+      
+      
+h2{
+  font-family:Trirong;
+  font-size:40pt;
+  font-weight: bold;
+  color: rgb(255, 219, 140);
+  text-shadow: 3px 3px 3px  rgba(4, 9, 56, 0.877);
+  text-align: center;
+      
+  }
+      
+div{
+  border-radius: 30px;
+
+
+  }
+      
+span{
+    color: rgb(253, 173, 0);
+    font-size: 25px;
+        
+        
+  }
+
+.art{
+    padding: 20px;
+    font-size: 15px;
+    color: rgb(25, 73, 16);
+    font-family: sofia;
+       
+  }
+
+.caption{
+    font-family: "Sofia", bold;
+    font-size: 20px;
+    color: rgb(2, 40, 88);
+
+
+  }
+
+      
+
+div.Mydiv3{
+    background-color: rgba(211, 204, 235,0.9);
+    border: 3px solid rgb(0, 19, 128);
+    margin:20px;
+    border-radius: 30px;
+    padding:20px;
+    width:500px;
+
+   }
+
+
+.Mydiv {
+    background-color:rgba(211, 204, 235,0.9);
+    border: 3px solid rgb(0, 19, 128);
+    margin:20px;
+    border-radius: 30px;
+    padding:20px;
+    width:500px;
+        
+    }
+       
+
+.button {
+    background-color: rgba(211, 204, 235,0.9);
+    border: 2px solid rgb(0, 19, 128);
+    color: rgb(0, 19, 128);
+    padding: 16px 32px;
+    text-align: none;
+    text-decoration: wavy;
+    display: inline-block;
+    font-size: 25px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 50px;
+    
+    font-family: sofia;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+      
+     }
+      
+    
+
+.button:hover {
+  background-color: rgb(255, 186, 36);
+  color:rgb(94, 66, 7);
+}
+
+
+#otherProfession {
+  display: none;
+}
+
+#other {
+  display: none;
+}
+
+#othertext {
+  display: none;
+}
+
+#othertool{
+  display: none;
+}
+#other9{
+  display: none;
+}
+      
+
+
+
+div.item {
+	min-width: 200px;
+	width: 20%;
+	height: 450px;
+	background-color: #02575e;
+	float: left;
+	margin: 10px;
+	padding: 10px;
+	position: relative;
+  
+}
+
+#paintingDataContainer div.item {
+  background-color: rgb(99, 10, 110);
+}
+
+#myGenericDataContainer div.item {
+  background-color: rgb(110, 58, 58);
+}
+
+#bookDataContainer div.item {
+  background-color: cadetblue ;
+}
+
+#otherDataContainer {
+  display: none;
+}
+
+div.item button {
+	position: absolute;
+	bottom: 10px;
+	right: 10px;
+}
+
+div.item button.edit {
+	right: 70px;
+}
+
+span.item {
+	line-height: 16px;
+	font-size: 14px;
+}
+
+span.item b {
+	margin-right: 10px;
+}
+
+span.undefined {
+	color: red;
+}
